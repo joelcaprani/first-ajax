@@ -26,6 +26,17 @@ $(document).ready(function () {
 
     });
 
-//
+    $('#count').on('click', counter);
+
+    function counter() {
+      $.ajax({
+        url: 'http://first-ajax-api.herokuapp.com/count',
+        method: 'GET'
+      }).done(function(responseData){
+        $('#step7').append('<br>' + responseData);
+        console.log(responseData);
+
+      });
+    }
 
 });
