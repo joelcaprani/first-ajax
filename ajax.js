@@ -2,14 +2,14 @@ $(document).ready(function () {
 
     $('#first').on('click', function() {
 
-      $.ajax({
-        url: 'http://first-ajax-api.herokuapp.com',
-        method: 'GET'
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com',
+      method: 'GET'
 
-        });
+      });
 
 
-    });
+  });
     $('#second').on('click', function(){
 
     $.ajax({
@@ -51,6 +51,18 @@ $(document).ready(function () {
         $('#step8').append('<br>' + responseData);
         console.log(responseData);
 
+      });
+    }
+    $('#car').on('click', cars);
+
+    function cars() {
+      $.ajax({
+        url: 'http://first-ajax-api.herokuapp.com/a_car',
+        method: 'GET'
+      }).done(function(responseData){
+        $('#carlist').append(responseData);
+        console.log(responseData);
+        console.log($('ul').attr('id'));
       });
     }
 });
