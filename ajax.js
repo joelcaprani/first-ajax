@@ -1,12 +1,5 @@
 $(document).ready(function () {
 
-  // $.ajax({
-  //   url: 'http://first-ajax-api.herokuapp.com',
-  //   method: 'GET',
-  //   // data: _____,
-  //   // dataType: _____
-  //   });
-
     $('#first').on('click', function() {
 
       $.ajax({
@@ -20,12 +13,21 @@ $(document).ready(function () {
     $('#second').on('click', function(){
 
     $.ajax({
-      url: 'http://first-ajax-api.herokuapp.com/ping',
+      url: 'http://first-ajax-api.herokuapp.com/pong',
       method: 'GET'
-  }).done(function (responseData) {
+  }).fail(function (responseData) {
       console.log(responseData);
-      $('#step3456').append(responseData);
+      $('#step3456').append('<br>' + responseData.responseText);
   });
 
     });
+
+//     $.ajax({
+//       url: 'http://first-ajax-api.herokuapp.com/pong',
+//       method: 'GET',
+//   // data: ,
+//   // dataType:
+//   }).fail(function () {
+// });
+
 });
