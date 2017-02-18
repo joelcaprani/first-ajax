@@ -39,4 +39,18 @@ $(document).ready(function () {
       });
     }
 
+    $('#time').on('click', timer);
+
+    function timer() {
+    $.ajax({
+        url: 'http://first-ajax-api.herokuapp.com/time',
+        method: 'GET',
+        data: {timezone: 'Pacific/Honolulu'},
+        dataType: 'text'
+      }).done(function(responseData){
+        $('#step8').append('<br>' + responseData);
+        console.log(responseData);
+
+      });
+    }
 });
