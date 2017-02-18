@@ -18,16 +18,14 @@ $(document).ready(function () {
   }).fail(function (responseData) {
       console.log(responseData);
       $('#step3456').append('<br>' + responseData.responseText);
+  }).always(function(responseData){
+    console.log('always method');
+  }).done(function(responseData){
+    console.log('done method');
   });
 
     });
 
-//     $.ajax({
-//       url: 'http://first-ajax-api.herokuapp.com/pong',
-//       method: 'GET',
-//   // data: ,
-//   // dataType:
-//   }).fail(function () {
-// });
+//
 
 });
